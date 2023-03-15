@@ -1,0 +1,12 @@
+[submodule "Eris Docs Bot"]
+	path = ErisDocsBot
+	url = https://github.com/DonovanDMC/ErisDocsBot
+[submodule "Oceanic Bot"]
+	path = OceanicBot
+	url = https://github.com/OceanicJS/Bot
+[submodule "Security"]
+	path = Security
+	url = https://github.com/DonovanDMC/Security
+[submodule "Project Manager"]
+	path = ProjectManager
+	url = https://github.com/DonovanDMC/ProjectManager
