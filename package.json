@@ -4,6 +4,11 @@
     "down": "sudo docker compose down $DOCKER_ARGS",
     "dev": "npm run down && COMPOSE_ARGS=\"-f docker-compose.dev.yml\" DOCKER_ARGS=\"--build\" npm run up",
     "update": "git pull && docker compose pull && git submodule update --init --recursive --remote && DOCKER_ARGS=\"--force-recreate -d\" npm run up",
+    "update-service": "git pull && docker compose pull $SERVICE && git submodule update --init --recursive --remote && DOCKER_ARGS=\"--force-recreate -d $SERVICE\" npm run up",
+    "update:eris": "SERVICE=\"eris-docs-bot\" npm run update-service",
+    "update:oceanic": "SERVICE=\"oceanic-bot\" npm run update-service",
+    "update:security": "SERVICE=\"security-bot\" npm run update-service",
+    "update:project": "SERVICE=\"project-manager\" npm run update-service",
     "start": "git pull && docker compose pull && npm run down && git submodule update --init --recursive --remote && DOCKER_ARGS=\"--force-recreate -d\" npm run up"
   }
 }
