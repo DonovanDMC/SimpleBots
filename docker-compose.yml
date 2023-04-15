@@ -90,6 +90,7 @@ services:
     image: ghcr.io/oceanicjs/datamining-bot
     volumes:
       - ./DataminingBot/data:/data:z
+      - ./DataminingBot/config.json:/app/config.json
     restart: always
     hostname: datamining-bot.containers.local
     healthcheck:

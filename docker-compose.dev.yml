@@ -90,6 +90,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./DataminingBot/data:/data:z
+      - ./DataminingBot/config.json:/app/config.json
     restart: always
     hostname: datamining-bot.containers.local
     healthcheck:
