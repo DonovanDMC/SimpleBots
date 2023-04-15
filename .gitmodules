@@ -10,3 +10,6 @@
 [submodule "Project Manager"]
 	path = ProjectManager
 	url = https://github.com/DonovanDMC/ProjectManager
+[submodule "Datamining Bot"]
+	path = DataminingBot
+	url = https://github.com/OceanicJS/DataminingBot
