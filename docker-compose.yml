@@ -49,7 +49,7 @@ services:
     image: ghcr.io/donovandmc/project-manager
     volumes:
       - ./ProjectManager/data/bot:/data
-      - ./ProjectManager/projects.json/bot:/app/projects.json
+      - ./ProjectManager/projects.json:/app/projects.json
     restart: always
     hostname: project-manager.bots.containers.local
     healthcheck:
