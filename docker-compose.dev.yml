@@ -45,6 +45,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./ProjectManager/data/bot:/data
+      - ./ProjectManager/projects.json/bot:/app/projects.json
     restart: always
     hostname: project-manager.bots.containers.local
     healthcheck:
