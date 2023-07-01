@@ -2,14 +2,14 @@
   "scripts": {
     "up": "sudo docker compose pull && sudo docker compose $COMPOSE_ARGS up $DOCKER_ARGS",
     "down": "sudo docker compose down $DOCKER_ARGS",
-    "dev": "npm run down && COMPOSE_ARGS=\"-f docker-compose.dev.yml\" DOCKER_ARGS=\"--build\" npm run up",
-    "update": "npm run pull && docker compose pull && DOCKER_ARGS=\"--force-recreate -d\" npm run up",
-    "update-service": "npm run pull && docker compose pull && DOCKER_ARGS=\"--force-recreate -d $SERVICE\" npm run up",
-    "update:eris": "SERVICE=\"eris-docs-bot\" npm run update-service",
-    "update:oceanic": "SERVICE=\"oceanic-bot\" npm run update-service",
-    "update:security": "SERVICE=\"security-bot\" npm run update-service",
-    "update:project": "SERVICE=\"project-manager\" npm run update-service",
-    "start": "npm run pull && docker compose pull && DOCKER_ARGS=\"--force-recreate -d\" npm run up",
+    "dev": "pnpm run down && COMPOSE_ARGS=\"-f docker-compose.dev.yml\" DOCKER_ARGS=\"--build\" pnpm run up",
+    "update": "pnpm run pull && docker compose pull && DOCKER_ARGS=\"--force-recreate -d\" pnpm run up",
+    "update-service": "pnpm run pull && docker compose pull && DOCKER_ARGS=\"--force-recreate -d $SERVICE\" pnpm run up",
+    "update:eris": "SERVICE=\"eris-docs-bot\" pnpm run update-service",
+    "update:oceanic": "SERVICE=\"oceanic-bot\" pnpm run update-service",
+    "update:security": "SERVICE=\"security-bot\" pnpm run update-service",
+    "update:project": "SERVICE=\"project-manager\" pnpm run update-service",
+    "start": "pnpm run pull && docker compose pull && DOCKER_ARGS=\"--force-recreate -d\" pnpm run up",
     "pull": "git pull && git submodule update --init --recursive --remote"
   }
 }
