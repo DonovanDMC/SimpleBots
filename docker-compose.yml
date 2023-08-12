@@ -1,4 +1,3 @@
-  
 version: "3"
 
 services:
@@ -9,20 +8,20 @@ services:
       - ./ErisDocsBot/data:/data:z
       - ./ErisDocsBot/config.json:/app/config.json
     restart: always
+    init: true
     hostname: eris-docs-bot.containers.local
     healthcheck:
       interval: 5s
       timeout: 1s
       test: wget -q --spider http://localhost:3621
     deploy:
-        resources:
-          limits:
-            memory: 256M
-          reservations:
-            memory: 128M
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
     networks:
-      default:
-        ipv4_address: 172.19.3.34
+      - default
   oceanic-bot:
     container_name: oceanic-bot
     image: ghcr.io/oceanicjs/bot
@@ -30,41 +29,20 @@ services:
       - ./OceanicBot/data:/data:z
       - ./OceanicBot/config.jsonc:/app/config.jsonc
     restart: always
+    init: true
     hostname: oceanic-bot.containers.local
     healthcheck:
       interval: 5s
       timeout: 1s
       test: wget -q --spider http://localhost:3621
     deploy:
-        resources:
-          limits:
-            memory: 256M
-          reservations:
-            memory: 128M
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
     networks:
-      default:
-        ipv4_address: 172.19.3.35
-  project-manager:
-    container_name: project-manager
-    image: ghcr.io/donovandmc/project-manager
-    volumes:
-      - ./ProjectManager/data/bot:/data
-      - ./ProjectManager/projects.json:/app/projects.json
-    restart: always
-    hostname: project-manager.bots.containers.local
-    healthcheck:
-      interval: 5s
-      timeout: 1s
-      test: wget -q --spider http://localhost:3621
-    deploy:
-        resources:
-          limits:
-            memory: 256M
-          reservations:
-            memory: 128M
-    networks:
-      default:
-        ipv4_address: 172.19.3.36
+      - default
   security:
     container_name: security-bot
     image: ghcr.io/donovandmc/security-bot
@@ -72,20 +50,20 @@ services:
       - ./Security/data/bot:/data
       - ./Security/servers.jsonc:/app/servers.jsonc
     restart: always
+    init: true
     hostname: security.bots.containers.local
     healthcheck:
       interval: 5s
       timeout: 1s
       test: wget -q --spider http://localhost:3621
     deploy:
-        resources:
-          limits:
-            memory: 256M
-          reservations:
-            memory: 128M
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
     networks:
-      default:
-        ipv4_address: 172.19.3.37
+      - default
   datamining-bot:
     container_name: datamining-bot
     image: ghcr.io/oceanicjs/datamining-bot
@@ -93,20 +71,20 @@ services:
       - ./DataminingBot/data:/data:z
       - ./DataminingBot/config.json:/app/config.json
     restart: always
+    init: true
     hostname: datamining-bot.containers.local
     healthcheck:
       interval: 5s
       timeout: 1s
       test: wget -q --spider http://localhost:3621
     deploy:
-        resources:
-          limits:
-            memory: 256M
-          reservations:
-            memory: 128M
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
     networks:
-      default:
-        ipv4_address: 172.19.3.38
+      - default
 
 networks:
   default:
