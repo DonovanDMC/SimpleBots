@@ -6,7 +6,7 @@ services:
     image: ghcr.io/donovandmc/eris-docs-bot
     volumes:
       - ./ErisDocsBot/data:/data:z
-      - ./ErisDocsBot/config.json:/app/config.json
+      - ./ErisDocsBot/config.jsonc:/app/config.jsonc
     restart: always
     init: true
     hostname: eris-docs-bot.containers.local
@@ -51,7 +51,7 @@ services:
       - ./Security/servers.jsonc:/app/servers.jsonc
     restart: always
     init: true
-    hostname: security.bots.containers.local
+    hostname: security-bot.containers.local
     healthcheck:
       interval: 5s
       timeout: 1s
@@ -69,7 +69,7 @@ services:
     image: ghcr.io/oceanicjs/datamining-bot
     volumes:
       - ./DataminingBot/data:/data:z
-      - ./DataminingBot/config.json:/app/config.json
+      - ./DataminingBot/config.jsonc:/app/config.jsonc
     restart: always
     init: true
     hostname: datamining-bot.containers.local
