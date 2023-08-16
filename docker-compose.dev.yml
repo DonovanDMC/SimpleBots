@@ -16,6 +16,8 @@ services:
       timeout: 2s
       test: lsof -i :80 || exit 1
     hostname: eris-docs-bot.containers.local
+    labels:
+      - "hostname=eris-docs-bot.containers.local"
     deploy:
       resources:
         limits:
@@ -35,6 +37,8 @@ services:
     restart: always
     init: true
     hostname: oceanic-bot.containers.local
+    labels:
+      - "hostname=oceanic-bot.containers.local"
     networks:
       - default
   security:
@@ -47,7 +51,9 @@ services:
       - ./Security/servers.jsonc:/app/servers.jsonc
     restart: always
     init: true
-    hostname: security.bots.containers.local
+    hostname: security-bot.containers.local
+    labels:
+      - "hostname=security-bot.containers.local"
     healthcheck:
       interval: 5s
       timeout: 1s
@@ -71,6 +77,8 @@ services:
     restart: always
     init: true
     hostname: datamining-bot.containers.local
+    labels:
+      - "hostname=datamining-bot.containers.local"
     healthcheck:
       interval: 5s
       timeout: 1s
