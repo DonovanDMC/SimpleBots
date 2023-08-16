@@ -10,6 +10,8 @@ services:
     restart: always
     init: true
     hostname: eris-docs-bot.containers.local
+    labels:
+      - "hostname=eris-docs-bot.containers.local"
     healthcheck:
       interval: 5s
       timeout: 1s
@@ -31,6 +33,8 @@ services:
     restart: always
     init: true
     hostname: oceanic-bot.containers.local
+    labels:
+      - "hostname=oceanic-bot.containers.local"
     healthcheck:
       interval: 5s
       timeout: 1s
@@ -52,6 +56,8 @@ services:
     restart: always
     init: true
     hostname: security-bot.containers.local
+    labels:
+      - "hostname=security-bot.containers.local"
     healthcheck:
       interval: 5s
       timeout: 1s
@@ -73,6 +79,8 @@ services:
     restart: always
     init: true
     hostname: datamining-bot.containers.local
+    labels:
+      - "hostname=datamining-bot.containers.local"
     healthcheck:
       interval: 5s
       timeout: 1s
