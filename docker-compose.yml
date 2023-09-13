@@ -53,6 +53,7 @@ services:
     volumes:
       - ./Security/data/bot:/data
       - ./Security/servers.jsonc:/app/servers.jsonc
+      - ./Security/config.jsonc:/app/config.jsonc
     restart: always
     init: true
     hostname: security-bot.containers.local
