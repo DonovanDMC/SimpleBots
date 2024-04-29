@@ -12,9 +12,9 @@ services:
     restart: always
     init: true
     healthcheck:
-      interval: 10s
-      timeout: 2s
-      test: lsof -i :80 || exit 1
+      interval: 5s
+      timeout: 1s
+      test: wget -q --spider http://127.0.0.1:3621
     hostname: eris-docs-bot.containers.local
     labels:
       - "hostname=eris-docs-bot.containers.local"
@@ -39,6 +39,10 @@ services:
     hostname: oceanic-bot.containers.local
     labels:
       - "hostname=oceanic-bot.containers.local"
+    healthcheck:
+      interval: 5s
+      timeout: 1s
+      test: wget -q --spider http://127.0.0.1:3621
     networks:
       - default
   security:
@@ -57,7 +61,7 @@ services:
     healthcheck:
       interval: 5s
       timeout: 1s
-      test: wget -q --spider http://localhost:3621
+      test: wget -q --spider http://127.0.0.1:3621
     deploy:
       resources:
         limits:
@@ -82,7 +86,7 @@ services:
     healthcheck:
       interval: 5s
       timeout: 1s
-      test: wget -q --spider http://localhost:3621
+      test: wget -q --spider http://127.0.0.1:3621
     deploy:
       resources:
         limits:

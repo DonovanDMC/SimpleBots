@@ -15,7 +15,7 @@ services:
     healthcheck:
       interval: 5s
       timeout: 1s
-      test: wget -q --spider http://localhost:3621
+      test: wget -q --spider http://127.0.0.1:3621
     deploy:
       resources:
         limits:
@@ -38,7 +38,7 @@ services:
     healthcheck:
       interval: 5s
       timeout: 1s
-      test: wget -q --spider http://localhost:3621
+      test: wget -q --spider http://127.0.0.1:3621
     deploy:
       resources:
         limits:
@@ -62,7 +62,7 @@ services:
     healthcheck:
       interval: 5s
       timeout: 1s
-      test: wget -q --spider http://localhost:3621
+      test: wget -q --spider http://127.0.0.1:3621
     deploy:
       resources:
         limits:
@@ -85,7 +85,7 @@ services:
     healthcheck:
       interval: 5s
       timeout: 1s
-      test: wget -q --spider http://localhost:3621
+      test: wget -q --spider http://127.0.0.1:3621
     deploy:
       resources:
         limits:
